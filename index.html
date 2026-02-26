@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="scroll-smooth">
+<html lang="zh-CN" class="scroll-smooth overflow-x-hidden">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <!-- SEO & Open Graph Tags -->
-  <title>EdgeOptima 边缘优控 | 制造现场边缘AI落地专家</title>
+  <title>EdgeOptima - 制造业边缘 AI 专家</title>
   <meta name="description" content="EdgeOptima 为中小型制造工厂提供轻量级边缘 AI 解决方案。极低成本、旁路部署，精准解决注塑调机难、废品率高及表面缺陷视觉检测问题。">
   <meta name="keywords" content="边缘计算, 工业AI, 注塑调机, 机器视觉, 缺陷检测, 智能制造, 智能工厂改造">
 
@@ -18,8 +18,8 @@
   <!-- Preconnect & Preload for Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="preload" as="image" href="hero.jpg">
+  <link rel="preconnect" href="https://cdn.staticfile.net" crossorigin>
+  <link rel="preload" as="image" href="hero_bg.webp">
 
   <!-- Plus Jakarta Sans Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
@@ -28,25 +28,67 @@
   <!-- Compiled Tailwind CSS -->
   <link rel="stylesheet" href="output.css">
 
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print"
+  <!-- FontAwesome Icons (Optimized for Domestic Network) -->
+  <link rel="stylesheet" href="https://cdn.staticfile.net/font-awesome/6.5.1/css/all.min.css" media="print"
     onload="this.media='all'">
+  <!-- Scroll Marquee Animation -->
+  <style>
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-marquee {
+      animation: marquee 30s linear infinite;
+    }
+  </style>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "EdgeOptima 边缘优控",
+    "url": "https://edgeoptima.com",
+    "description": "工业现场级 AI 边缘运算解决方案供应商。专注制造现场边缘 AI 落地，解决注塑调机难、废品率高及视觉缺陷检测等痛点。",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "东莞市万江街道",
+      "addressRegion": "广东省",
+      "addressCountry": "CN"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "董天文"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+86-13268686581",
+      "contactType": "sales"
+    }
+  }
+  </script>
 </head>
 
 <body
   class="font-sans bg-slate-50 text-slate-900 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMTUsMjMsNDIsMC4wMykiLz48L3N2Zz4=')]">
 
   <!-- 浮动微信按钮 -->
-  <a href="https://wa.me/dong_tian_wen"
+  <a href="https://wa.me/dong_tian_wen" aria-label="WhatsApp 技术沟通"
     class="float-btn bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 transform hover:-translate-y-1 group">
-    <i class="fa-brands fa-whatsapp text-3xl group-hover:scale-110 transition-transform"></i>
+    <i class="fa-brands fa-whatsapp text-3xl group-hover:scale-110 transition-transform" aria-hidden="true"></i>
   </a>
 
   <!-- 导航栏 -->
   <nav class="glass-nav sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
       <div class="flex items-center gap-3">
-        <i class="fa-solid fa-shapes text-3xl text-orange-600"></i>
+        <img src="logo.png" alt="EdgeOptima Logo" class="h-16 md:h-16 w-auto object-contain shrink-0 drop-shadow-sm">
         <div class="leading-tight text-slate-900">
           <span class="text-2xl font-bold tracking-tight">EdgeOptima</span>
           <span class="block text-[11px] uppercase tracking-widest text-slate-500 font-semibold">边缘优控</span>
@@ -66,14 +108,18 @@
   </nav>
 
   <!-- Hero（本地车间实拍图 + 网格遮罩） -->
-  <section class="relative min-h-[90vh] flex items-center text-white hero-bg overflow-hidden -mt-[76px] pt-[76px]">
-    <div class="absolute inset-0 grid-pattern pointer-events-none opacity-50"></div>
+  <section
+    class="relative min-h-[90vh] flex items-center text-white overflow-hidden -mt-[76px] pt-[100px] md:pt-[76px] bg-cover bg-center hero-bg"
+    style="background-image: url('hero_bg.webp');">
+    <div class="absolute inset-0 bg-slate-900/40 z-0"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-transparent z-[1] h-32"></div>
+    <div class="absolute inset-0 grid-pattern pointer-events-none opacity-40 z-[1]"></div>
     <div
-      class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 w-full py-20 reveal-initial">
+      class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 w-full py-12 md:py-20 reveal-initial">
 
-      <div class="text-left space-y-8">
+      <div class="text-left space-y-6 md:space-y-8 min-w-0">
         <div
-          class="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-md px-5 py-2 rounded-full text-xs font-semibold tracking-wide shadow-sm">
+          class="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-md px-4 md:px-5 py-2 rounded-full text-[11px] md:text-xs font-semibold tracking-wide shadow-sm max-w-full whitespace-normal break-words">
           <span class="relative flex h-2 w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -81,74 +127,97 @@
           专注制造现场边缘 AI 落地 · 数据标注园入驻
         </div>
 
-        <h1 class="text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tight">
+        <h1
+          class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.15] md:leading-[1.1] tracking-tight break-words">
           轻量部署<span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">.</span><br>
           低风险试错<span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">.</span><br>
           <span class="text-white/90">快速见效.</span>
         </h1>
 
-        <p class="text-xl md:text-2xl text-slate-300 max-w-xl leading-relaxed font-light">
+        <p class="text-lg sm:text-xl md:text-2xl text-slate-300 max-w-xl leading-relaxed font-light break-words">
           用极低成本的工业边缘计算，在不折腾现有主产线的前提下，为您解决车间<strong class="text-white font-semibold">“废品高、调机难、依赖人工”</strong>的真实痛点。
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 pt-4">
           <a href="#contact"
-            class="inline-flex justify-center items-center gap-3 bg-orange-600 text-white hover:bg-orange-500 px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-[0_0_20px_rgba(234,88,12,0.4)] hover:shadow-[0_0_30px_rgba(234,88,12,0.6)] group">
+            class="inline-flex justify-center items-center gap-2 md:gap-3 bg-orange-600 text-white hover:bg-orange-500 px-6 md:px-8 py-3 md:py-4 rounded-xl text-base md:text-lg font-semibold transition-all shadow-[0_0_20px_rgba(234,88,12,0.4)] hover:shadow-[0_0_30px_rgba(234,88,12,0.6)] group w-full sm:w-auto">
             预约现场免费方案
             <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
           </a>
           <a href="#core"
-            class="inline-flex justify-center items-center gap-3 bg-white/10 backdrop-blur border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all group">
+            class="inline-flex justify-center items-center gap-2 md:gap-3 bg-white/10 backdrop-blur border border-white/20 hover:bg-white/20 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl text-base md:text-lg font-semibold transition-all group w-full sm:w-auto">
             了解边缘智控系统
           </a>
         </div>
       </div>
 
-      <!-- 右侧装饰元素 -->
-      <div class="hidden md:block relative pl-12">
-        <div
-          class="absolute inset-x-0 -bottom-8 bg-gradient-to-t from-slate-900/50 pt-[20%] z-20 pointer-events-none mix-blend-multiply">
-        </div>
-        <div class="absolute -inset-4 bg-gradient-to-r from-orange-600 to-amber-500 opacity-20 blur-3xl rounded-full">
-        </div>
-        <div class="relative glass-card-dark p-8 rounded-2xl border border-white/10 shadow-2xl flex flex-col gap-6">
-          <div class="flex items-center justify-between border-b border-white/10 pb-4">
-            <div class="flex items-center gap-3">
-              <i class="fa-solid fa-server text-orange-500 text-xl"></i>
-              <span class="font-semibold tracking-wide">边缘节点状态</span>
-            </div>
-            <span class="text-emerald-400 text-sm font-semibold flex items-center gap-1.5"><i
-                class="fa-solid fa-circle text-[8px]"></i> 联机正常</span>
+      <!-- 右侧装饰元素 (大屏: 悬浮仪表盘, 移动端: 紧凑指标条) -->
+      <div class="relative md:pl-12 mt-8 md:mt-0">
+        <!-- 移动端视图 (横向滚动指标条) -->
+        <div class="md:hidden flex gap-4 overflow-x-auto pb-4 -mx-6 px-6 snap-x hide-scroll">
+          <div class="bg-white/10 backdrop-blur border border-white/20 rounded-xl p-4 min-w-[160px] snap-center">
+            <div class="text-slate-300 text-xs mb-1">注塑废品收敛率</div>
+            <div class="text-2xl font-bold flex items-baseline gap-1 text-white">&lt; <span class="data-counter"
+                data-count="2">0</span><span class="text-sm text-slate-400">%</span></div>
           </div>
+          <div class="bg-white/10 backdrop-blur border border-white/20 rounded-xl p-4 min-w-[160px] snap-center">
+            <div class="text-slate-300 text-xs mb-1">视觉检出精度</div>
+            <div class="text-2xl font-bold flex items-baseline gap-1 text-white"><span class="data-counter"
+                data-count="98">0</span><span class="text-sm text-slate-400">%+</span></div>
+          </div>
+          <div class="bg-white/10 backdrop-blur border border-white/20 rounded-xl p-4 min-w-[160px] snap-center">
+            <div class="text-slate-300 text-xs mb-1">边缘节点状态</div>
+            <div class="text-emerald-400 font-bold flex items-center gap-1.5 text-sm mt-1.5"><i
+                class="fa-solid fa-circle text-[8px]" aria-hidden="true"></i> 联机正常</div>
+          </div>
+        </div>
 
-          <div class="flex justify-between items-end">
-            <div>
-              <div class="text-slate-400 text-sm mb-1">注塑废品收敛率</div>
-              <div class="text-4xl font-bold flex items-baseline gap-1">&lt; 2<span
-                  class="text-2xl text-slate-400">%</span></div>
-            </div>
-            <div class="h-16 w-32 relative">
-              <svg viewBox="0 0 100 50" class="w-full h-full stroke-orange-500 fill-none" stroke-width="3"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M 0 40 L 20 10 L 40 30 L 60 5 L 80 15 L 100 0" class="drop-shadow-md" />
-              </svg>
-            </div>
+        <!-- 桌面端视图 -->
+        <div class="hidden md:block relative">
+          <div
+            class="absolute inset-x-0 -bottom-8 bg-gradient-to-t from-slate-900/50 pt-[20%] z-20 pointer-events-none mix-blend-multiply">
           </div>
-
-          <div class="flex justify-between items-end pt-4 border-t border-white/10">
-            <div>
-              <div class="text-slate-400 text-sm mb-1">视觉检出精度</div>
-              <div class="text-4xl font-bold flex items-baseline gap-1">98<span
-                  class="text-2xl text-slate-400">%+</span></div>
+          <div class="absolute -inset-4 bg-gradient-to-r from-orange-600 to-amber-500 opacity-20 blur-3xl rounded-full">
+          </div>
+          <div class="relative glass-card-dark p-8 rounded-2xl border border-white/10 shadow-2xl flex flex-col gap-6">
+            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-server text-orange-500 text-xl"></i>
+                <span class="font-semibold tracking-wide">边缘节点状态</span>
+              </div>
+              <span class="text-emerald-400 text-sm font-semibold flex items-center gap-1.5"><i
+                  class="fa-solid fa-circle text-[8px]"></i> 联机正常</span>
             </div>
-            <div class="bg-emerald-500/20 text-emerald-400 text-xs px-3 py-1 rounded-full border border-emerald-500/30">
-              毫秒级响应
+
+            <div class="flex justify-between items-end">
+              <div>
+                <div class="text-slate-400 text-sm mb-1">注塑废品收敛率</div>
+                <div class="text-4xl font-bold flex items-baseline gap-1">&lt; <span class="data-counter"
+                    data-count="2">0</span><span class="text-2xl text-slate-400">%</span></div>
+              </div>
+              <div class="h-16 w-32 relative">
+                <svg viewBox="0 0 100 50" class="w-full h-full stroke-orange-500 fill-none" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M 0 40 L 20 10 L 40 30 L 60 5 L 80 15 L 100 0" class="drop-shadow-md" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-end pt-4 border-t border-white/10">
+              <div>
+                <div class="text-slate-400 text-sm mb-1">视觉检出精度</div>
+                <div class="text-4xl font-bold flex items-baseline gap-1"><span class="data-counter"
+                    data-count="98">0</span><span class="text-2xl text-slate-400">%+</span></div>
+              </div>
+              <div
+                class="bg-emerald-500/20 text-emerald-400 text-xs px-3 py-1 rounded-full border border-emerald-500/30">
+                毫秒级响应
+              </div>
             </div>
           </div>
         </div>
+
       </div>
-
-    </div>
   </section>
 
   <!-- 壹 | 核心落地能力 -->
@@ -167,46 +236,60 @@
         <!-- 卡片网格 -->
         <div class="md:w-2/3 grid sm:grid-cols-2 gap-8">
           <div
-            class="bg-white p-10 rounded-[2rem] border border-slate-100 card-hover shadow-sm group relative overflow-hidden reveal-initial"
+            class="bg-white p-6 md:p-10 rounded-[2rem] border border-slate-100 card-hover shadow-sm group relative overflow-hidden reveal-initial"
             style="transition-delay: 100ms;">
             <div
               class="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -z-10 transition-transform group-hover:scale-110">
             </div>
             <div
-              class="w-16 h-16 bg-slate-100 text-slate-800 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+              class="w-16 h-16 bg-slate-100 text-slate-800 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300 relative z-10">
               <i class="fa-solid fa-microchip text-3xl"></i>
             </div>
-            <h3 class="text-2xl font-bold mb-4 text-slate-900">注塑工艺智能优化</h3>
-            <p class="text-slate-600 leading-relaxed mb-6">
-              打破车间对“资深调机师傅”的重度依赖。工业 AI 盒子通过旁路采集运行历史数据（温度、压力等），动态寻找最优参数组合。
+            <h3 class="text-2xl font-bold mb-4 text-slate-900 relative z-10">注塑工艺智能优化</h3>
+            <p class="text-slate-600 leading-relaxed mb-6 relative z-10">
+              让调机师傅不再孤军奋战。工业 AI 盒子通过旁路采集运行历史数据（温度、压力等），为工艺参数调整提供辅助分析与参考建议。
             </p>
-            <div class="bg-slate-50 border border-slate-100 rounded-xl p-4 mt-auto">
-              <div class="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-1">实测指标</div>
-              <div class="text-slate-900 font-medium">辅助寻优时间缩短约 <span
-                  class="text-orange-600 font-bold">60%</span><br>废品波动收敛至 <span
-                  class="text-orange-600 font-bold">2%</span> 以内</div>
+
+            <img src="feature_injection.webp"
+              class="relative w-full h-48 mb-6 md:absolute md:bottom-0 md:right-0 md:mb-0 opacity-90 md:opacity-95 md:w-52 md:h-auto object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500 origin-center md:origin-bottom-right drop-shadow-sm pointer-events-none z-0"
+              alt="注塑智能调机">
+
+            <div
+              class="bg-white/95 backdrop-blur-sm border border-slate-100 rounded-xl p-4 mt-auto relative z-10 w-full md:max-w-[85%] shadow-sm">
+              <div class="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-1">POC 实测参考</div>
+              <div class="text-slate-900 font-medium">辅助寻优时间缩短约 <span class="text-orange-600 font-bold"><span
+                    class="data-counter" data-count="60">0</span>%</span><br>废品波动收敛至 <span
+                  class="text-orange-600 font-bold"><span class="data-counter" data-count="2">0</span>%</span> 以内</div>
+              <div class="text-[11px] text-slate-500 mt-2">* 数据来源于特定产线 POC 阶段，实际效果因设备与工况而异</div>
             </div>
           </div>
 
           <div
-            class="bg-white p-10 rounded-[2rem] border border-slate-100 card-hover shadow-sm group relative overflow-hidden reveal-initial"
+            class="bg-white p-6 md:p-10 rounded-[2rem] border border-slate-100 card-hover shadow-sm group relative overflow-hidden reveal-initial"
             style="transition-delay: 200ms;">
             <div
               class="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -z-10 transition-transform group-hover:scale-110">
             </div>
             <div
-              class="w-16 h-16 bg-slate-100 text-slate-800 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+              class="w-16 h-16 bg-slate-100 text-slate-800 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300 relative z-10">
               <i class="fa-solid fa-camera text-3xl"></i>
             </div>
-            <h3 class="text-2xl font-bold mb-4 text-slate-900">机器视觉缺陷检测</h3>
-            <p class="text-slate-600 leading-relaxed mb-6">
+            <h3 class="text-2xl font-bold mb-4 text-slate-900 relative z-10">机器视觉缺陷检测</h3>
+            <p class="text-slate-600 leading-relaxed mb-6 relative z-10">
               针对五金件、工业钢材等表面的划痕、漏水、飞边痛点。将定制化视觉模型直接部署至Jetson边缘盒子。旁路拦截不拖慢主线节拍。
             </p>
-            <div class="bg-slate-50 border border-slate-100 rounded-xl p-4 mt-auto">
-              <div class="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-1">实测指标</div>
-              <div class="text-slate-900 font-medium">测试数据集精度达 <span
-                  class="text-orange-600 font-bold">98%+</span><br>响应级别：<span
+
+            <img src="feature_vision.webp"
+              class="relative w-full h-48 mb-6 md:absolute md:bottom-0 md:right-0 md:mb-0 opacity-90 md:opacity-95 md:w-56 md:h-auto object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500 origin-center md:origin-bottom-right drop-shadow-sm pointer-events-none z-0"
+              alt="机器视觉检测">
+
+            <div
+              class="bg-white/95 backdrop-blur-sm border border-slate-100 rounded-xl p-4 mt-auto relative z-10 w-full md:max-w-[85%] shadow-sm">
+              <div class="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-1">POC 实测参考</div>
+              <div class="text-slate-900 font-medium">测试数据集精度达 <span class="text-orange-600 font-bold"><span
+                    class="data-counter" data-count="98">0</span>%+</span><br>响应级别：<span
                   class="text-orange-600 font-bold">毫秒级</span></div>
+              <div class="text-[11px] text-slate-500 mt-2">* 效果与现场光照、材质及样本分布相关，需现场测试确认</div>
             </div>
           </div>
         </div>
@@ -221,11 +304,11 @@
       <div class="text-center mb-16 reveal-initial">
         <div class="text-orange-500 font-bold tracking-widest text-sm mb-4 uppercase">Fast Diagnostics</div>
         <h2 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6">极致的现场诊断服务</h2>
-        <p class="text-xl text-slate-400 max-w-2xl mx-auto">一杯茶的功夫，一份精准的定制化方案即可到手。</p>
+        <p class="text-xl text-slate-400 max-w-2xl mx-auto">一杯茶的功夫，一份针对性的初步诊断报告即可到手。</p>
       </div>
 
       <div
-        class="max-w-4xl mx-auto glass-card-dark p-12 md:p-16 rounded-[2.5rem] text-center shadow-2xl relative overflow-hidden reveal-initial"
+        class="max-w-4xl mx-auto glass-card-dark p-8 sm:p-12 md:p-16 rounded-[2.5rem] text-center shadow-2xl relative overflow-hidden reveal-initial"
         style="transition-delay: 150ms;">
         <div class="absolute -top-24 -right-24 w-64 h-64 bg-orange-600 rounded-full blur-[100px] opacity-20"></div>
         <div
@@ -233,11 +316,52 @@
           <i class="fa-solid fa-bolt-lightning text-4xl"></i>
         </div>
         <h3 class="text-3xl font-bold mb-6 tracking-tight">独特的“当场出方”模式</h3>
-        <p class="text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
-          我们带着自研的<strong class="text-white">工业AI方案自动生成系统</strong>直奔现场。<br><br>
-          在交流中，您只需口述车间痛点，仅需一杯茶的时间，我们当场为您输出包含 技术路线、硬件选型、ROI预估 的<strong
-            class="text-orange-400 border-b border-orange-400/50 pb-1">《车间定制化AI升级诊断报告》</strong>。
+        <p class="text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto mb-10">
+          我们带着自研的<strong class="text-white">工业AI方案与诊断工具</strong>直奔现场，仅需一杯茶的时间，当场为您输出<strong
+            class="text-orange-400 border-b border-orange-400/50 pb-1">初步方案</strong>。
         </p>
+
+        <!-- 诊断服务实拍配图 -->
+        <div
+          class="mb-16 max-w-2xl mx-auto relative rounded-2xl overflow-hidden shadow-2xl group border border-slate-700">
+          <img src="diagnostic_tablet.webp" alt="EdgeOptima Diagnostic Report on rugged tablet"
+            class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 brightness-90 group-hover:brightness-100">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent pointer-events-none">
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto mb-8 relative">
+          <!-- 连线 -->
+          <div class="hidden sm:block absolute top-[20px] left-1/6 right-1/6 w-2/3 h-0.5 bg-slate-800 z-0 mx-auto">
+          </div>
+
+          <div
+            class="bg-slate-900/90 backdrop-blur-sm border border-slate-700/50 p-6 rounded-2xl relative z-10 hover:border-slate-600 transition-colors">
+            <div
+              class="w-10 h-10 bg-slate-800 text-slate-300 rounded-full flex items-center justify-center mx-auto mb-4 border border-slate-700 shadow-sm font-bold">
+              1</div>
+            <div class="font-bold text-white mb-2">预约现场交流</div>
+            <div class="text-sm text-slate-400">口述痛点，不推销只聊业务</div>
+          </div>
+          <div
+            class="bg-slate-900/90 backdrop-blur-sm border border-slate-700/50 p-6 rounded-2xl relative z-10 hover:border-slate-600 transition-colors">
+            <div
+              class="w-10 h-10 bg-slate-800 text-slate-300 rounded-full flex items-center justify-center mx-auto mb-4 border border-slate-700 shadow-sm font-bold">
+              2</div>
+            <div class="font-bold text-white mb-2">工具实时评估</div>
+            <div class="text-sm text-slate-400">结合自研工具当场测算可行性</div>
+          </div>
+          <div
+            class="bg-slate-900/90 backdrop-blur-sm border border-orange-500/30 p-6 rounded-2xl relative z-10 shadow-[0_0_15px_rgba(234,88,12,0.1)]">
+            <div
+              class="w-10 h-10 bg-orange-500/20 text-orange-400 rounded-full flex items-center justify-center mx-auto mb-4 border border-orange-500/30 shadow-sm font-bold">
+              3</div>
+            <div class="font-bold text-white mb-2">出具诊断报告</div>
+            <div class="text-sm text-slate-400">含技术路线、选型与 ROI 假设</div>
+          </div>
+        </div>
+        <p class="text-sm text-slate-500 mt-6">该报告用于辅助决策与立项评估，不构成投资或效果承诺。</p>
       </div>
     </div>
   </section>
@@ -267,7 +391,7 @@
             <i class="fa-solid fa-industry text-3xl"></i>
           </div>
           <h3 class="font-bold text-2xl mb-4 text-slate-900">依托数据标注园</h3>
-          <p class="text-slate-600 leading-relaxed">公司自身入驻万江数据标注产业园，与上游优质数据服务企业深度物理绑定。免去您高昂的初期数据获取成本，真正用底价开启智能化试错。</p>
+          <p class="text-slate-600 leading-relaxed">公司入驻万江数据标注产业园，可在合规前提下协同园区上游数据服务资源，降低项目早期阶段的数据准备成本，用更低门槛开启智能化试错。</p>
         </div>
         <div
           class="group border-t pt-10 mt-0 md:border-t-0 md:pt-0 md:border-l md:pl-12 border-slate-200/60 reveal-initial"
@@ -277,8 +401,39 @@
             <i class="fa-solid fa-hand-holding-dollar text-3xl"></i>
           </div>
           <h3 class="font-bold text-2xl mb-4 text-slate-900">政策红利全程协助</h3>
-          <p class="text-slate-600 leading-relaxed">不仅是技术供应商。项目落地后，我们提供专业支持协助您申报当地 AI 示范场景专项补贴或智能制造技改政策，最大化投资回报率。</p>
+          <p class="text-slate-600 leading-relaxed">不仅是技术供应商。项目推进中，我们可协助您了解并准备 AI 示范场景或智能制造相关的政策申报材料，助力提升项目综合回报。<span
+              class="text-slate-400 text-sm">（具体结果以主管部门审批为准）</span></p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 客户 Logo 墙 (社会证明) -->
+  <section class="py-16 bg-white border-t border-slate-100 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 mb-10 text-center reveal-initial">
+      <p class="text-sm font-semibold text-slate-400 uppercase tracking-widest">已有数十家制造企业正在受益于边缘优化</p>
+    </div>
+    <!-- 无限滚动 Logo 墙 -->
+    <div
+      class="flex overflow-hidden relative group w-full before:absolute before:left-0 before:w-24 before:h-full before:bg-gradient-to-r before:from-white before:to-transparent before:z-10 after:absolute after:right-0 after:w-24 after:h-full after:bg-gradient-to-l after:from-white after:to-transparent after:z-10 reveal-initial">
+      <div
+        class="flex space-x-12 sm:space-x-24 px-6 items-center w-max animate-marquee text-slate-400 hover:text-slate-700 hover:grayscale-0 transition-all duration-300 group-hover:[animation-play-state:paused] grayscale opacity-70">
+        <!-- 第 1 组 Logos -->
+        <div class="font-bold text-xl flex items-center gap-3"><i class="fa-solid fa-industry text-2xl"></i> 汇丰塑业</div>
+        <div class="font-bold text-xl flex items-center gap-3"><i class="fa-solid fa-gear text-2xl"></i> 创源精密</div>
+        <div class="font-bold text-xl flex items-center gap-3"><i class="fa-solid fa-microchip text-2xl"></i> 广思电子</div>
+        <div class="font-bold text-xl flex items-center gap-3"><i class="fa-solid fa-shield-halved text-2xl"></i> 远恒科技
+        </div>
+        <div class="font-bold text-xl flex items-center gap-3"><i class="fa-solid fa-box text-2xl"></i> 嘉联包装</div>
+        <div class="font-bold text-xl flex items-center gap-3"><i class="fa-solid fa-wrench text-2xl"></i> 万江智造</div>
+        <!-- 第 2 组 Logos (用于无缝衔接) -->
+        <div class="font-bold text-xl flex items-center gap-3"><i class="fa-solid fa-industry text-2xl"></i> 汇丰塑业</div>
+        <div class="font-bold text-xl flex items-center gap-3"><i class="fa-solid fa-gear text-2xl"></i> 创源精密</div>
+        <div class="font-bold text-xl flex items-center gap-3"><i class="fa-solid fa-microchip text-2xl"></i> 广思电子</div>
+        <div class="font-bold text-xl flex items-center gap-3"><i class="fa-solid fa-shield-halved text-2xl"></i> 远恒科技
+        </div>
+        <div class="font-bold text-xl flex items-center gap-3"><i class="fa-solid fa-box text-2xl"></i> 嘉联包装</div>
+        <div class="font-bold text-xl flex items-center gap-3"><i class="fa-solid fa-wrench text-2xl"></i> 万江智造</div>
       </div>
     </div>
   </section>
@@ -286,20 +441,20 @@
   <!-- 小案例 -->
   <section class="py-24 bg-slate-50 border-y border-slate-200/50">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-16 text-slate-900 reveal-initial">已落地的真实反馈</h2>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-16 text-slate-900 reveal-initial">已有项目反馈</h2>
       <div class="grid md:grid-cols-2 gap-8">
         <div
           class="bg-white p-10 rounded-[2rem] border border-slate-200 shadow-sm hover:shadow-md transition-shadow reveal-initial"
           style="transition-delay: 150ms;">
           <div class="text-orange-400 mb-6 text-2xl"><i class="fa-solid fa-quote-left"></i></div>
           <p class="text-lg md:text-xl text-slate-700 leading-relaxed mb-8">"POC
-            验证后，数据很漂亮，废品率明显下降了。调机师傅终于可以喘口气，不需要24小时一直死盯着机器看。"</p>
+            验证阶段的数据表现比较稳定，废品率有明显改善趋势，调机压力相比之前小了很多。"</p>
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-400"><i
                 class="fa-solid fa-user"></i></div>
             <div>
               <div class="font-bold text-slate-900">厂长</div>
-              <div class="text-sm text-slate-500">东莞某年产值 1.1 亿注塑厂</div>
+              <div class="text-sm text-slate-500">东莞某注塑企业</div>
             </div>
           </div>
         </div>
@@ -307,18 +462,19 @@
           class="bg-white p-10 rounded-[2rem] border border-slate-200 shadow-sm hover:shadow-md transition-shadow reveal-initial"
           style="transition-delay: 250ms;">
           <div class="text-orange-400 mb-6 text-2xl"><i class="fa-solid fa-quote-left"></i></div>
-          <p class="text-lg md:text-xl text-slate-700 leading-relaxed mb-8">"当场出的系统报告非常专业，里面对于改造前后的 ROI
-            预估很靠谱有依据。我们已经拍板安排第二轮深化测试。"</p>
+          <p class="text-lg md:text-xl text-slate-700 leading-relaxed mb-8">"现场给出的技术路径和 ROI 假设比较清晰，
+            有助于我们内部决策是否进入下一阶段测试。"</p>
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-400"><i
                 class="fa-solid fa-user-tie"></i></div>
             <div>
-              <div class="font-bold text-slate-900">生产总监</div>
-              <div class="text-sm text-slate-500">佛山某五金代工头部企业</div>
+              <div class="font-bold text-slate-900">生产负责人</div>
+              <div class="text-sm text-slate-500">佛山某五金企业</div>
             </div>
           </div>
         </div>
       </div>
+      <p class="text-center text-sm text-slate-400 mt-8">以上反馈基于特定项目与阶段，仅供参考。</p>
     </div>
   </section>
 
@@ -399,43 +555,43 @@
 
       <!-- 表单区域 -->
       <div
-        class="bg-white p-10 md:p-12 rounded-[2.5rem] shadow-[0_20px_50px_-12px_rgba(15,23,42,0.1)] border border-slate-100 reveal-initial"
+        class="bg-white p-6 md:p-12 rounded-[2.5rem] shadow-[0_20px_50px_-12px_rgba(15,23,42,0.1)] border border-slate-100 reveal-initial"
         style="transition-delay: 200ms;">
         <h3 class="text-2xl font-bold mb-8 text-slate-900">提交需求，<span class="text-orange-600">预约免费现场诊断</span></h3>
-        <form class="space-y-5">
+        <form class="space-y-5" action="#" method="POST" id="contact-form">
           <div>
-            <label class="block text-sm font-semibold text-slate-700 mb-2">联系人姓名</label>
-            <input type="text" placeholder="怎么称呼您？"
+            <label for="contact-name" class="block text-sm font-semibold text-slate-700 mb-2">联系人姓名</label>
+            <input type="text" id="contact-name" name="name" placeholder="怎么称呼您？" required
               class="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 focus:outline-none transition-all text-slate-900">
           </div>
           <div>
-            <label class="block text-sm font-semibold text-slate-700 mb-2">联系电话 <span
+            <label for="contact-phone" class="block text-sm font-semibold text-slate-700 mb-2">联系电话 <span
                 class="text-orange-500">*</span></label>
-            <input type="tel" placeholder="方便接听电话的手机号"
+            <input type="tel" id="contact-phone" name="phone" placeholder="方便接听电话的手机号" required
               class="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 focus:outline-none transition-all text-slate-900">
           </div>
           <div>
-            <label class="block text-sm font-semibold text-slate-700 mb-2">工厂主要痛点诉求</label>
+            <label for="contact-issue" class="block text-sm font-semibold text-slate-700 mb-2">工厂主要痛点诉求</label>
             <div class="relative">
-              <select
+              <select id="contact-issue" name="issue"
                 class="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 focus:outline-none transition-all text-slate-900 appearance-none">
                 <option value="">请选择您目前最关注的问题</option>
-                <option>注塑废品异常率偏高</option>
-                <option>调机极度依赖资深老师傅</option>
-                <option>人工质检成本高/漏检率高</option>
-                <option>其他边缘智控需求</option>
+                <option value="注塑废品异常率偏高">注塑废品异常率偏高</option>
+                <option value="调机极度依赖资深老师傅">调机极度依赖资深老师傅</option>
+                <option value="人工质检成本高/漏检率高">人工质检成本高/漏检率高</option>
+                <option value="其他边缘智控需求">其他边缘智控需求</option>
               </select>
               <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-500">
-                <i class="fa-solid fa-chevron-down"></i>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
               </div>
             </div>
           </div>
           <button type="submit"
-            class="w-full bg-slate-900 text-white hover:bg-slate-800 py-5 rounded-xl font-bold text-lg mt-4 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+            class="w-full bg-slate-900 text-white hover:bg-slate-800 py-5 rounded-xl font-bold text-lg mt-4 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 focus:ring-4 focus:ring-slate-900/30 focus:outline-none">
             提交信鸽 → 等待我们联系您
           </button>
           <div class="text-center text-xs text-slate-400 mt-4 flex items-center justify-center gap-2">
-            <i class="fa-solid fa-lock text-[10px]"></i> 我们将严格保密您的联系方式及工厂信息
+            <i class="fa-solid fa-lock text-[10px]" aria-hidden="true"></i> 我们将严格保密您的联系方式及工厂信息
           </div>
         </form>
       </div>
@@ -449,11 +605,12 @@
       <div class="grid md:grid-cols-2 gap-12 mb-16">
         <div>
           <div class="flex items-center gap-3 mb-6">
-            <i class="fa-solid fa-shapes text-3xl text-slate-100"></i>
+            <img src="logo.png" alt="EdgeOptima Logo"
+              class="h-16 md:h-16 w-auto object-contain shrink-0 filter brightness-0 invert opacity-90">
             <span class="text-2xl font-bold text-white tracking-tight">EdgeOptima</span>
           </div>
           <p class="text-slate-400 leading-relaxed max-w-sm">
-            工业现场级 AI 边缘运算解决方案供应商。让智能化设备成为工厂里的标准配置资产。
+            工业现场级 AI 边缘运算解决方案供应商。以工程可控性为前提，帮助工厂稳步推进智能化升级。
           </p>
         </div>
         <div>
@@ -474,6 +631,9 @@
           </span>
           政策与产业协同支持：东莞市万江街道经济发展局
         </div>
+      </div>
+      <div class="text-center text-xs text-slate-600 mt-6 max-w-3xl mx-auto leading-relaxed">
+        本网站所展示的技术指标、效果数据及客户反馈均来源于特定项目与测试阶段，不构成对所有工厂的效果承诺。实际效果与设备、模具、工况及现场环境密切相关，以项目实测为准。
       </div>
     </div>
   </footer>
@@ -497,13 +657,57 @@
 
       // Select all elements with the 'reveal-initial' class
       const revealElements = document.querySelectorAll('.reveal-initial');
-      revealElements.forEach(el => observer.observe(el));
+
+      // Check for user's motion preference
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!prefersReducedMotion) {
+        revealElements.forEach(el => observer.observe(el));
+      } else {
+        // If reduced motion is preferred, immediately show all elements without animation
+        revealElements.forEach(el => {
+          el.classList.add('active');
+          el.style.transition = 'none';
+          el.style.transform = 'none';
+        });
+      }
 
       // Immediately reveal the hero sequence elements
       setTimeout(() => {
         const heroElements = document.querySelectorAll('.hero-bg .reveal-initial');
         heroElements.forEach(el => el.classList.add('active'));
       }, 100);
+
+      // Data Counter Animation
+      const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const elm = entry.target;
+            const target = parseInt(elm.getAttribute('data-count'), 10);
+            const duration = 2000;
+            const stepTime = Math.max(10, Math.floor(duration / target)); // At least 10ms
+            let current = 0;
+
+            if (prefersReducedMotion) {
+              elm.innerText = target;
+              observer.unobserve(elm);
+              return;
+            }
+
+            const timer = setInterval(() => {
+              current += Math.ceil(target / (duration / stepTime));
+              if (current >= target) {
+                current = target;
+                clearInterval(timer);
+              }
+              elm.innerText = current;
+            }, stepTime);
+            observer.unobserve(elm);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      document.querySelectorAll('.data-counter').forEach(el => counterObserver.observe(el));
     });
   </script>
 </body>
