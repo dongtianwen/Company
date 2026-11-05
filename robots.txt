@@ -21,4 +21,4 @@ Allow: /
 User-agent: Baiduspider
 Allow: /
 
-Sitemap: https://edgeoptima.com/sitemap.xml
+Sitemap: https://tianwenzhisuan.cn/sitemap.xml

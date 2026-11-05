@@ -6,8 +6,8 @@
 
 ## 站点
 
-- [首页](https://edgeoptima.com/): 能力概览、诊断服务、项目实践、常见问题与联系方式
-- [完整内容（Markdown）](https://edgeoptima.com/llms-full.txt): 全站文字内容的单文件版本
+- [首页](https://tianwenzhisuan.cn/): 能力概览、诊断服务、项目实践、常见问题与联系方式
+- [完整内容（Markdown）](https://tianwenzhisuan.cn/llms-full.txt): 全站文字内容的单文件版本
 
 ## 业务方向
 
