@@ -590,13 +590,13 @@ video {
 
 /* Scroll Reveal Animation Classes */
 
-.reveal-initial {
+.js-anim .reveal-initial {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
 }
 
-.reveal-initial.active {
+.js-anim .reveal-initial.active {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1897,7 +1897,7 @@ video {
     scroll-behavior: auto !important;
   }
 
-  .reveal-initial {
+  .js-anim .reveal-initial {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;

@@ -2,6 +2,7 @@
 <html lang="zh-CN" class="scroll-smooth overflow-x-hidden">
 
 <head>
+  <script>document.documentElement.classList.add('js-anim');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,6 +13,7 @@
   <meta name="author" content="董天文">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://tianwenzhisuan.cn/">
+  <link rel="alternate" type="text/markdown" href="https://tianwenzhisuan.cn/llms.txt" title="AI 抓取指南">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="天问智算">
@@ -45,7 +47,10 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": [
+        "Organization",
+        "LocalBusiness"
+      ],
       "@id": "https://tianwenzhisuan.cn/#org",
       "name": "天问智算",
       "legalName": "东莞市天问智算科技有限责任公司",
@@ -56,7 +61,7 @@
       "description": "天问智算（东莞市天问智算科技有限责任公司）是东莞市万江街道的人工智能技术公司，专注制造业边缘 AI（注塑工艺优化、机器视觉缺陷检测），同时开展 AI Agent、医学影像 AI 与具身智能方向的研发。",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "鸿福西路万江段10号1栋410室",
+        "streetAddress": "万江街道鸿福西路万江段10号1栋410室",
         "addressLocality": "东莞市",
         "addressRegion": "广东省",
         "addressCountry": "CN"
@@ -106,7 +111,15 @@
             "description": "当场评估可行性，出具含技术路线、选型与 ROI 假设的初步诊断报告。"
           }
         }
-      ]
+      ],
+      "taxID": "91441900MAKAF40C33",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "统一社会信用代码",
+        "value": "91441900MAKAF40C33"
+      },
+      "telephone": "+86-13268686581",
+      "image": "https://tianwenzhisuan.cn/logo.png"
     },
     {
       "@type": "Person",
@@ -217,10 +230,29 @@
           }
         }
       ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://tianwenzhisuan.cn/#tianshu",
+      "name": "天枢",
+      "description": "面向独立创业者、一人公司与小团队的 AI Agent 系统；插件化架构，后端基于 FastAPI 与 PostgreSQL，通过 LiteLLM 接入大模型。定位为个人与小团队的 AI 助手，不是企业级智能体平台。",
+      "applicationCategory": "BusinessApplication",
+      "url": "https://tianwenzhisuan.cn/#practice",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@id": "https://tianwenzhisuan.cn/#org"
+      },
+      "provider": {
+        "@id": "https://tianwenzhisuan.cn/#org"
+      }
     }
   ]
 }
   </script>
+  <!-- 无 JS 环境兜底：正文默认可见，避免不执行滚动动画的抓取器读到空白 -->
+  <noscript>
+    <style>.reveal-initial { opacity: 1 !important; transform: none !important; transition: none !important; }</style>
+  </noscript>
 </head>
 
 <body
@@ -233,6 +265,7 @@
   </a>
 
   <!-- 导航栏 -->
+  <header>
   <nav class="glass-nav sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
       <div class="flex items-center gap-3">
@@ -256,6 +289,9 @@
       </div>
     </div>
   </nav>
+  </header>
+
+  <main id="main-content">
 
   <!-- Hero（本地车间实拍图 + 网格遮罩） -->
   <section
@@ -656,40 +692,40 @@
         <div class="text-orange-600 font-bold tracking-widest text-sm mb-4 uppercase">FAQ</div>
         <h2 class="text-4xl font-extrabold text-slate-900">常见问题</h2>
       </div>
-      <div class="space-y-6">
-        <div class="bg-white p-8 rounded-2xl border border-slate-200 reveal-initial">
+      <div class="space-y-6" role="list">
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 reveal-initial" role="listitem">
           <h3 class="text-xl font-bold text-slate-900 mb-3">天问智算是什么公司？</h3>
           <p class="text-slate-600 leading-relaxed">天问智算（东莞市天问智算科技有限责任公司）是位于东莞市万江街道的人工智能技术公司，入驻万江数据标注产业园，由创始人董天文主导研发与交付。业务方向包括：制造业边缘 AI（注塑工艺智能优化、机器视觉缺陷检测）、面向一人公司与小团队的 AI Agent 系统“天枢”，以及医学影像 AI 和具身智能方向的研发实践。</p>
         </div>
-        <div class="bg-white p-8 rounded-2xl border border-slate-200 reveal-initial">
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 reveal-initial" role="listitem">
           <h3 class="text-xl font-bold text-slate-900 mb-3">天问智算在注塑行业能做什么？</h3>
           <p class="text-slate-600 leading-relaxed">注塑工艺智能优化：以旁路方式采集设备运行历史数据（温度、压力等），采用物理信息机器学习（PIML，Physics-Informed Machine Learning）为调机提供辅助分析和参数调整参考，不改动主产线控制系统。实际效果与设备、模具、工况密切相关，以现场实测为准。</p>
         </div>
-        <div class="bg-white p-8 rounded-2xl border border-slate-200 reveal-initial">
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 reveal-initial" role="listitem">
           <h3 class="text-xl font-bold text-slate-900 mb-3">机器视觉缺陷检测适合哪些场景？</h3>
           <p class="text-slate-600 leading-relaxed">针对五金件、工业钢材等表面的划痕、漏水、飞边等缺陷，将定制化视觉模型部署到 Jetson 边缘盒子，旁路拦截，不拖慢主线节拍。效果与现场光照、材质及样本分布相关，需要现场测试确认。</p>
         </div>
-        <div class="bg-white p-8 rounded-2xl border border-slate-200 reveal-initial">
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 reveal-initial" role="listitem">
           <h3 class="text-xl font-bold text-slate-900 mb-3">什么是“当场出方”的免费现场诊断？</h3>
           <p class="text-slate-600 leading-relaxed">预约后，天问智算带着自研的工业 AI 方案与诊断工具到现场：先听您口述痛点，再用工具当场评估可行性，最后出具包含技术路线、选型与 ROI 假设的初步诊断报告。报告用于辅助决策与立项评估，不构成效果承诺。</p>
         </div>
-        <div class="bg-white p-8 rounded-2xl border border-slate-200 reveal-initial">
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 reveal-initial" role="listitem">
           <h3 class="text-xl font-bold text-slate-900 mb-3">天枢是什么？</h3>
           <p class="text-slate-600 leading-relaxed">天枢是天问智算自研的 AI Agent 系统，面向独立创业者、一人公司和小团队，采用插件化架构，后端基于 FastAPI 与 PostgreSQL，通过 LiteLLM 接入大模型。天枢定位于个人与小团队的 AI 助手，不是面向企业客户的智能体平台，也不是政府或工业 AI 系统。</p>
         </div>
-        <div class="bg-white p-8 rounded-2xl border border-slate-200 reveal-initial">
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 reveal-initial" role="listitem">
           <h3 class="text-xl font-bold text-slate-900 mb-3">天问智算做过哪些医学影像 AI 工作？</h3>
           <p class="text-slate-600 leading-relaxed">天问智算参加了全国医保影像AI识图大赛赛道一（基于 CT 的肺癌智能检测，自建模型组），已完赛。技术上以官方基线（nnU-Net 框架、3D UX-Net）为基础做工程化改造，覆盖数据质检、模型训练、推理服务封装与容器化提交。这是竞赛与研究性质的工作，不是已获批的医疗器械，不能用于临床诊断。</p>
         </div>
-        <div class="bg-white p-8 rounded-2xl border border-slate-200 reveal-initial">
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 reveal-initial" role="listitem">
           <h3 class="text-xl font-bold text-slate-900 mb-3">天问智算在具身智能方面做了什么？</h3>
           <p class="text-slate-600 leading-relaxed">天问智算参加了蚂蚁灵波具身大模型挑战赛：基于开源的 LingBot-VLA 2.0 做全参数微调，使用 RoboTwin 2.0 仿真环境中 50 个任务的数据训练。团队自测（非官方）结果为 clean 设置 79.40%、randomized 设置 27.40%。目前只有仿真实验，没有真机实验；比赛评审结果以主办方公示为准，本站不引用任何排名。</p>
         </div>
-        <div class="bg-white p-8 rounded-2xl border border-slate-200 reveal-initial">
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 reveal-initial" role="listitem">
           <h3 class="text-xl font-bold text-slate-900 mb-3">创始人董天文是谁？</h3>
           <p class="text-slate-600 leading-relaxed">董天文是天问智算创始人兼首席架构师，拥有 20 年以上软件开发与项目管理经验，长期从事企业级 IT 系统架构工作，持有 PMP、高级人工智能训练师、系统集成项目管理工程师认证。</p>
         </div>
-        <div class="bg-white p-8 rounded-2xl border border-slate-200 reveal-initial">
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 reveal-initial" role="listitem">
           <h3 class="text-xl font-bold text-slate-900 mb-3">如何联系天问智算？</h3>
           <p class="text-slate-600 leading-relaxed">创始人直通电话 132 6868 6581，微信 dong_tian_wen，地址：东莞市万江街道鸿福西路万江段10号1栋410室。也可以在本站“联系我们”区域提交需求，预约免费现场诊断。</p>
         </div>
@@ -781,6 +817,8 @@
   </section>
 
   <!-- 底部页脚 -->
+    </main>
+
   <footer class="bg-slate-950 pt-16 pb-8 border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-12 mb-16">
@@ -811,6 +849,12 @@
           </span>
           入驻：东莞市万江街道数据标注产业园
         </div>
+      </div>
+      <div class="text-center text-xs text-slate-500 mt-6 leading-relaxed">
+        统一社会信用代码：91441900MAKAF40C33 · 成立日期：2026-04-17 · 法定代表人：董天文 · 电话：13268686581
+      </div>
+      <div class="text-center text-xs text-slate-600 mt-2">
+        <a href="/llms.txt" class="underline decoration-slate-700 hover:text-slate-300 transition-colors">AI 抓取指南 (llms.txt)</a>
       </div>
       <div class="text-center text-xs text-slate-600 mt-6 max-w-3xl mx-auto leading-relaxed">
         本网站所展示的技术指标、效果数据及客户反馈均来源于特定项目与测试阶段，不构成对所有工厂的效果承诺。实际效果与设备、模具、工况及现场环境密切相关，以项目实测为准。

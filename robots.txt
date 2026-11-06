@@ -21,4 +21,7 @@ Allow: /
 User-agent: Baiduspider
 Allow: /
 
+# AI guidance / 官网导览图：权威页面与引用约束
+# https://tianwenzhisuan.cn/llms.txt
+
 Sitemap: https://tianwenzhisuan.cn/sitemap.xml
