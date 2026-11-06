@@ -2,3 +2,6 @@ node_modules/
 package-lock.json
 __pycache__/
 *.pyc
+
+# 内部工作记录（含部署细节），不进公开仓库
+/.workbuddy-ai/
